@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TempTracker</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+
+  <header class="brand">
+    <h1>TempTracker</h1>
+    <p>Tu compañero climático</p>
+  </header>
+
+  <form id="search-form" class="search" autocomplete="off">
+    <input id="city-input" type="text" placeholder="Escribe una ciudad — Cusco, Lima, Madrid…" required>
+    <button id="search-btn" type="submit">Buscar</button>
+  </form>
+
+  <section id="result" aria-live="polite">
+    <div id="state-idle" class="state">
+      <p>Ingresa una ciudad para ver su clima actual.</p>
+    </div>
+
+    <div id="state-loading" class="state" hidden>
+      <div class="loader"></div>
+      <p>Consultando el clima…</p>
+    </div>
+
+    <div id="state-error" class="state state--error" hidden role="alert">
+      <p id="error-message">No pudimos encontrar esa ciudad.</p>
+    </div>
+
+    <article id="weather-card" class="card" hidden>
+      <div class="card__top">
+        <div>
+          <h2 id="w-city">—</h2>
+          <p id="w-country">—</p>
+          <p id="w-time">—</p>
+        </div>
+        <img id="w-icon" src="" alt="">
+      </div>
+      <div class="card__temp">
+        <span id="w-temp">--</span><span class="deg">°C</span>
+      </div>
+      <p id="w-condition">—</p>
+      <div class="card__stats">
+        <div><b id="w-humidity">—</b><small>💧 Humedad</small></div>
+        <div><b id="w-wind">—</b><small>💨 Viento</small></div>
+        <div><b id="w-feels">—</b><small>🌡️ Sensación</small></div>
+      </div>
+    </article>
+  </section>
+
+  <footer>Datos provistos por WeatherAPI.com</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
